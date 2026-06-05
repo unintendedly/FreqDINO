@@ -1109,12 +1109,12 @@ if __name__ == '__main__':
 
     # 用于日志文件名
     if args.test_mode or args.resume != -1:
-        save_dir = os.path.join(prefix, "FreqDINO/checkpoints/", args.model_dir)
+        save_dir = os.path.join(prefix, "checkpoints/", args.model_dir)
     else:
         time_start = datetime.now().strftime('%m%d_%H%M')
         if args.rank == 0:  # 只在主进程打印
             print(f'time:  {time_start}')
-        save_dir = os.path.join(prefix, "FreqDINO/checkpoints/", args.model_dir, time_start)
+        save_dir = os.path.join(prefix, "checkpoints/", args.model_dir, time_start)
         if args.rank == 0:  # 只在主进程打印
             print(f'save_dir:  {save_dir}')
         os.makedirs(save_dir, exist_ok=True)
