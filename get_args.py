@@ -7,7 +7,7 @@ def list_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--model_dir', '-md', type=str, default='freqdino')
-    parser.add_argument('--weights', '-md', type=str, default='freqdino pretrained filename')
+    parser.add_argument('--weights', '-w', type=str, default='freqdino pretrained filename')
     parser.add_argument('--resume', '-rs', type=int, default=-1, help="which epoch continue to train")
     parser.add_argument('--epochs', type=int, default=20)
     parser.add_argument('--record_step', type=int, default=100,
