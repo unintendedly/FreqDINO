@@ -14,6 +14,7 @@ torchrun \
     --master_port=12381 \
 ./freqdino.py \
     --model_dir "freqdino" \
+    --weights "pretrained.tar" \
     --batch_size 32 \
     --image_size 512 \
     --backbone_size "large" \
