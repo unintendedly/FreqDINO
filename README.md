@@ -10,6 +10,7 @@ We provide code for the reproduction of the main results in [FreqDINO: Frequency
 ### Data and Weights
 The dataset we use in the paper can be downloaded from the links below.
     * [OpenSDID](https://github.com/iamwangyabin/OpenSDI)
+    
 Then, you should place the folder in the same directory as freqdino.py, for example: `FreqDINO/dataset/datasets--nebula--OpenSDI_test`
 You also need to download the [DINOv3](https://github.com/facebookresearch/dinov3) and weights, and place them in the same directory level, such as: `FreqDINO/dinov3-main/` and `FreqDINO/weights/dinov3/`.
 
