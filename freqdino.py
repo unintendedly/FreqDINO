@@ -885,9 +885,9 @@ def train_standard(args, model, device, optimizer, train_loader, valid_loader, s
 def test(args, model, test_loader, device, no_load=False):
     """向后兼容的测试函数，支持batch_size=1和batch_size>1"""
     if not no_load and args.rank == 0:
-        checkpoint = torch.load(save_dir, map_location='cuda:{}'.format(torch.cuda.current_device()))
+        checkpoint = torch.load(os.path.join(save_dir, args.weights), map_location='cuda:{}'.format(torch.cuda.current_device()))
         if args.rank == 0:  # 只在主进程打印
-            print('load model from {}'.format(save_dir))
+            print('load model from {}'.format(os.path.join(save_dir, args.weights)))
         model.load_state_dict(checkpoint['model_state_dict'])
 
     # 确保所有进程模型同步（如果加载了模型）
