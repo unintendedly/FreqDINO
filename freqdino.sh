@@ -1,0 +1,27 @@
+#!/bin/bash
+
+export CUDA_VISIBLE_DEVICES='6, 7'
+
+# 获取可见 GPU 数量
+NUM_GPUS=$(echo $CUDA_VISIBLE_DEVICES | tr ',' ' ' | wc -w)
+echo "Using GPUs: $CUDA_VISIBLE_DEVICES"
+echo "Number of GPUs: $NUM_GPUS"
+
+torchrun \
+    --standalone \
+    --nproc_per_node="$NUM_GPUS" \
+    --master_port=12377 \
+./freqdino.py \
+    --model_dir "freqdino" \
+    --batch_size 4 \
+    --image_size 512 \
+    --backbone_size "large" \
+    --num_samples 21000 \
+    --adapter_interval 6 \
+    --hidden_dim_ratio 1 \
+    --adapter_dim_ratio 4 \
+    --learning_rate 2e-5 \
+    --wavelet 'sym4'
+
+
+
