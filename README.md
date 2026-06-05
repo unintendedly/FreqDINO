@@ -1,4 +1,4 @@
-# FreqDINO
+# FreqDINO: Frequency-Aware Adaptation of Vision Transformers for AI-Generated Content Detection
 ![Overview](overview.png)
 ## Introduction
 We provide code for the reproduction of the main results in [FreqDINO: Frequency-Aware Adaptation of Vision Transformers for AI-Generated Content Detection](). 
